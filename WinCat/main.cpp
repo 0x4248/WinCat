@@ -4,9 +4,27 @@
 #include <fstream>
 #include <string>
 using namespace std;
-const char version = '0.1';
 int main(int argc, char** argv)
 {
+    string version = "0.1.2";
+    string arg;
+    for (int i = 0; i < argc; ++i)
+        arg =  argv[i];
+    if (arg == "-v") 
+    {
+        cout << version;
+        return 0;
+    }
+    if (arg == "--help")
+    {
+        cout << "WinCat the cat command for windows\n";
+        cout << "Made by awesomelewis2007\n";
+        cout << "Github: https://github.com/awesomelewis2007/WinCat \n";
+        cout << "Usage:\n    wincat.exe [FILENAME] [ARGUMENTS]\n";
+        cout << "Arguments:\n    -v    Displays the version\n    --help    Displays this help file\n";
+        return 0;
+    }
+
     string file = argv[1];
     string line;
     int linenum = 0;
