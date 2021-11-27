@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 int main() {
+	printf("Starting Compile!\n");
 	system("cl main.cpp /oBuild/WinCat.exe");
 	return 0;
 }
