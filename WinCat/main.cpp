@@ -6,11 +6,30 @@
 using namespace std;
 int main(int argc, char** argv)
 {
-    string version = "0.1.4";
+    string version = "0.1.5";
     string arg;
     for (int i = 0; i < argc; ++i)
-        arg =  argv[i];
-        if (arg == "-l") 
+    {
+        arg = argv[i];
+        if (arg == "-ln")
+        {
+            string file = argv[1];
+            string line;
+            int linenum = 1;
+            ifstream myfile(file);
+            if (myfile.is_open())
+            {
+                while (getline(myfile, line))
+                {
+                    linenum = linenum + 1;
+                }
+                cout << linenum;
+                myfile.close();
+            }
+            else cout << "Unable to open file";
+            return 0;
+        }
+        if (arg == "-l")
         {
             string file = argv[1];
             string line;
@@ -29,7 +48,7 @@ int main(int argc, char** argv)
             return 0;
         }
 
-        if (arg == "-v") 
+        if (arg == "-v")
         {
             cout << version;
             return 0;
@@ -41,10 +60,10 @@ int main(int argc, char** argv)
             cout << "Made by awesomelewis2007\n";
             cout << "Github: https://github.com/awesomelewis2007/WinCat \n";
             cout << "Usage:\n    wincat.exe [FILENAME] [ARGUMENTS]\n";
-            cout << "Arguments:\n    -v    Displays the version\n    --help    Displays this help file\n    -l    Displays the line numbers\n";
+            cout << "Arguments:\n    -v    Displays the version\n    --help    Displays this help file\n    -l    Displays the line numbers and the file\n    -ln    Shows how many lines there are in a file\n";
             return 0;
         }
-
+    }
     string file = argv[1];
     string line;
     ifstream myfile(file);
