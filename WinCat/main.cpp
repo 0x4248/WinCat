@@ -1,49 +1,49 @@
 //WinCat - By awesomelewis2007
-
+//Github:https://github.com/awesomelewis2007/WinCat
 #include <iostream>
 #include <fstream>
 #include <string>
 using namespace std;
 int main(int argc, char** argv)
 {
-    string version = "0.1.3";
+    string version = "0.1.4";
     string arg;
     for (int i = 0; i < argc; ++i)
         arg =  argv[i];
-    if (arg == "-l") 
-    {
-        string file = argv[1];
-        string line;
-        int linenum = 1;
-        ifstream myfile(file);
-        if (myfile.is_open())
+        if (arg == "-l") 
         {
-            while (getline(myfile, line))
+            string file = argv[1];
+            string line;
+            int linenum = 1;
+            ifstream myfile(file);
+            if (myfile.is_open())
             {
-                cout << linenum << "|" << line << '\n';
-                linenum = linenum + 1;
+                while (getline(myfile, line))
+                {
+                    cout << linenum << "|" << line << '\n';
+                    linenum = linenum + 1;
+                }
+                myfile.close();
             }
-            myfile.close();
+            else cout << "Unable to open file";
+            return 0;
         }
 
-        else cout << "Unable to open file";
+        if (arg == "-v") 
+        {
+            cout << version;
+            return 0;
+        }
 
-        return 0;
-    }
-    if (arg == "-v") 
-    {
-        cout << version;
-        return 0;
-    }
-    if (arg == "--help")
-    {
-        cout << "WinCat the cat command for windows\n";
-        cout << "Made by awesomelewis2007\n";
-        cout << "Github: https://github.com/awesomelewis2007/WinCat \n";
-        cout << "Usage:\n    wincat.exe [FILENAME] [ARGUMENTS]\n";
-        cout << "Arguments:\n    -v    Displays the version\n    --help    Displays this help file\n    -l    Displays the line numbers\n";
-        return 0;
-    }
+        if (arg == "--help")
+        {
+            cout << "WinCat the cat command for windows\n";
+            cout << "Made by awesomelewis2007\n";
+            cout << "Github: https://github.com/awesomelewis2007/WinCat \n";
+            cout << "Usage:\n    wincat.exe [FILENAME] [ARGUMENTS]\n";
+            cout << "Arguments:\n    -v    Displays the version\n    --help    Displays this help file\n    -l    Displays the line numbers\n";
+            return 0;
+        }
 
     string file = argv[1];
     string line;
@@ -56,8 +56,6 @@ int main(int argc, char** argv)
         }
         myfile.close();
     }
-
     else cout << "Unable to open file";
-
     return 0;
 }
