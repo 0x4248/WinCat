@@ -12,6 +12,8 @@ The cat command for windows
 
 -l    Displays the line numbers
 
+-ln    Shows how many lines there are in a file
+
 ## Compiling
 
 <img src="https://img.icons8.com/fluency/48/000000/visual-studio-2019.png"/>
