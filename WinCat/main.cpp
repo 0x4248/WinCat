@@ -6,9 +6,9 @@
 using namespace std;
 int main(int argc, char** argv)
 {
-    string version = "0.1.7";
+    string version = "0.1.7.2";
     if (argc == 1) {
-        cout << "\033[0;31mError [3]: Missing aegument\nCpp.Console.argc = 1 -> raise error\033[0;37m";
+        cout << "\033[0;31mError [3]: Missing argument\nCpp.Console.argc = 1 -> raise error\033[0;37m";
         return 3;
     }
     string arg;
