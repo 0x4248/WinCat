@@ -6,7 +6,11 @@
 using namespace std;
 int main(int argc, char** argv)
 {
-    string version = "0.1.6";
+    string version = "0.1.7";
+    if (argc == 1) {
+        cout << "\033[0;31mError [3]: Missing aegument\nCpp.Console.argc = 1 -> raise error\033[0;37m";
+        return 3;
+    }
     string arg;
     for (int i = 0; i < argc; ++i)
     {
@@ -26,7 +30,7 @@ int main(int argc, char** argv)
                 cout << linenum;
                 myfile.close();
             }
-            else cout << "Can not open: " << file << " Check the name and try again!";
+            else cout << "\033[0;31mError [2]: Can't open: " << file << " Check the name and try again!\nif(file.isopen()){}else{raise error}\033[0;37m";
             return 0;
         }
         if (arg == "-l")
@@ -44,7 +48,7 @@ int main(int argc, char** argv)
                 }
                 myfile.close();
             }
-            else cout << "Can not open: " << file << " Check the name and try again!";
+            else cout << "\033[0;31mError [2]: Can not open: " << file << " Check the name and try again!\nif(file.isopen()){}else{raise error}\033[0;37m";
             return 0;
         }
 
@@ -75,6 +79,6 @@ int main(int argc, char** argv)
         }
         myfile.close();
     }
-    else cout << "Can not open: " << file << " Check the name and try again!";
+    else cout << "\033[0;31mError [2]: Can not open: " << file << " Check the name and try again!\nif(file.isopen()){}else{raise error} \033[0;37m";
     return 0;
 }
