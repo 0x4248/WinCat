@@ -4,16 +4,37 @@
 #include <fstream>
 #include <string>
 using namespace std;
+
+string version;
+int help() {
+    cout << "\033[0;36mWinCat the cat command for windows\n";
+    cout << "\033[0;37mMade by awesomelewis2007\n";
+    cout << "Github: https://github.com/awesomelewis2007/WinCat \n";
+    cout << "Usage:\n    wincat.exe [FILENAME] [ARGUMENTS]\n";
+    cout << "Arguments:\n    -v    Displays the version\n    --help    Displays this help file\n    -l    Displays the line numbers and the file\n    -ln    Shows how many lines there are in a file\n";
+    return 0;
+}
+int info() {
+    cout << "\033[0;36mWinCat the cat command for windows\n";
+    cout << "\033[0;37mMade by awesomelewis2007\n";
+    cout << "Github: https://github.com/awesomelewis2007/WinCat \n";
+    cout << "Version:" << version << "\n";
+    return 0;
+}
 int main(int argc, char** argv)
 {
-    string version = "0.1.9";
+    version = "0.2.0";
     if (argc == 1) {
         cout << "\033[0;31mError [3]: Missing argument\nCpp.Console.argc = 1 -> raise error\033[0;37m";
         return 3;
     }
     string arg;
-    for (int i = 0; i < argc; ++i)
-    {
+    for (int i = 0; i < argc; ++i) {
+        //This scans through each argument
+        //if(arg == "argument goes here"){
+        //  ***code goes here***
+        //  return 0; <--- run this to have a argument that wont run the main script
+        //}
         arg = argv[i];
         if (arg == "-ln")
         {
@@ -60,22 +81,17 @@ int main(int argc, char** argv)
         
         if (arg == "--help")
         {
-            cout << "\033[0;36mWinCat the cat command for windows\n";
-            cout << "\033[0;37mMade by awesomelewis2007\n";
-            cout << "Github: https://github.com/awesomelewis2007/WinCat \n";
-            cout << "Usage:\n    wincat.exe [FILENAME] [ARGUMENTS]\n";
-            cout << "Arguments:\n    -v    Displays the version\n    --help    Displays this help file\n    -l    Displays the line numbers and the file\n    -ln    Shows how many lines there are in a file\n";
+            help();
             return 0;
         }
         if (arg == "--info")
         {
-            cout << "\033[0;36mWinCat the cat command for windows\n";
-            cout << "\033[0;37mMade by awesomelewis2007\n";
-            cout << "Github: https://github.com/awesomelewis2007/WinCat \n";
-            cout << "Version:" << version << "\n";
+            info();
             return 0;
         }
     }
+    // *** MAIN SCRIPT ***
+
     string file = argv[1];
     string line;
     ifstream myfile(file);
