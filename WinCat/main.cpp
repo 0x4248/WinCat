@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <stdlib.h>
 using namespace std;
 
 string version;
@@ -12,18 +13,18 @@ int help() {
     cout << "Github: https://github.com/awesomelewis2007/WinCat \n";
     cout << "Usage:\n    wincat.exe [FILENAME] [ARGUMENTS]\n";
     cout << "Arguments:\n    -v    Displays the version\n    --help    Displays this help file\n    -l    Displays the line numbers and the file\n    -ln    Shows how many lines there are in a file\n";
-    return 0;
+    exit(0);
 }
 int info() {
     cout << "\033[0;36mWinCat the cat command for windows\n";
     cout << "\033[0;37mMade by awesomelewis2007\n";
     cout << "Github: https://github.com/awesomelewis2007/WinCat \n";
     cout << "Version:" << version << "\n";
-    return 0;
+    exit(0);
 }
 int main(int argc, char** argv)
 {
-    version = "0.2.0";
+    version = "0.2.1";
     if (argc == 1) {
         cout << "\033[0;31mError [3]: Missing argument\nCpp.Console.argc = 1 -> raise error\033[0;37m";
         return 3;
