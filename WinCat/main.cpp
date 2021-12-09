@@ -17,7 +17,12 @@ int info() {
 }
 int main(int argc, char** argv)
 {
-    version = "0.2.3";
+    version = "";
+    std::ifstream versionfile("AppData/version");
+    std::string str;
+    while (std::getline(versionfile, str)) {
+        version = version + str;
+    }
     if (argc == 1) {
         cout << "\033[0;31mError [3]: Missing argument\nCpp.Console.argc = 1 -> raise error\033[0;37m";
         return 3;
