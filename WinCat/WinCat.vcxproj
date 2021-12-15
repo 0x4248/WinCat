@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="help.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="WinCatGlobal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wincat.h" />
+    <ClInclude Include="WinCatGlobal.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

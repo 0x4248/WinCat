@@ -21,9 +21,15 @@
     <ClCompile Include="help.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WinCatGlobal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wincat.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinCatGlobal.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,19 +5,21 @@
 #include <string>
 #include <stdlib.h>
 #include "wincat.h" // <-- includes external functions 
+#include "WinCatGlobal.h" // <-- includes global varibles
 using namespace std;
 
-string version;
 int info() {
+    string version = ver;
     cout << "\033[0;36mWinCat the cat command for windows\n";
     cout << "\033[0;37mMade by awesomelewis2007\n";
     cout << "Github: https://github.com/awesomelewis2007/WinCat \n";
     cout << "Version:" << version << "\n";
+    cout << "Build Type:" << build_type << "\n";
     exit(0);
 }
 int main(int argc, char** argv)
 {
-    version = "0.2.5";
+    string version = ver;
     if (argc == 1) {
         cout << "\033[0;31mError [3]: Missing argument\nCpp.Console.argc = 1 -> raise error\033[0;37m";
         return 3;
@@ -69,7 +71,7 @@ int main(int argc, char** argv)
 
         if (arg == "-v")
         {
-            cout << version;
+            cout << version << " " << build_type;
             return 0;
         }
         
