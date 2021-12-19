@@ -16,4 +16,4 @@ jobs:
     - name: Compile
       run: |
         cd WinCat
-        cl main.cpp help.cpp
+        cl main.cpp help.cpp WinCatGlobal.cpp
