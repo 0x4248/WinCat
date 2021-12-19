@@ -5,7 +5,7 @@
 #include <string>
 #include <stdlib.h>
 #include "wincat.h" // <-- includes external functions 
-#include "WinCatGlobal.h" // <-- includes global varibles
+#include "WinCatGlobal.h" // <-- includes global variables
 using namespace std;
 
 int info() {
