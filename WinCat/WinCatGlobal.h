@@ -1,8 +1,8 @@
 //WinCat - By awesomelewis2007
 //Github:https://github.com/awesomelewis2007/WinCat
 //WinCat Global file
-// - Only put varibles for buid and other scripts 
-// - Do not put varible names that contain names from other hedders or scripts
+// - Only put variables for build and other scripts 
+// - Do not put variable names that contain names from other headers or scripts
 #ifndef GLOBALS
 #define GLOBALS
 #include <iostream>
